@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Rezora AI Calling Platform - "Lavender Sage" Theme (WCAG AA Compliant) */
+
+@layer base {
+  :root {
+    /* Base colors - Light theme */
+    --background: 0 0% 99%; /* Warm off-white */
+    --foreground: 30 5% 15%; /* Warm dark for high contrast */
+
+    /* Card surfaces */
+    --card: 0 0% 100%; /* Pure white for clarity */
+    --card-foreground: 30 5% 15%;
+
+    /* Popover surfaces */
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 5% 15%;
+
+    /* Primary brand colors - Warm Lavender */
+    --primary: 310 40% 50%; /* Warm purple with pink undertones */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 310 40% 65%;
+    --primary-dark: 310 40% 40%;
+
+    /* Secondary colors - Sage Green */
+    --secondary: 145 20% 88%; /* Light sage */
+    --secondary-foreground: 145 25% 20%;
+
+    /* Muted colors */
+    --muted: 110 10% 94%; /* Soft green-gray */
+    --muted-foreground: 110 10% 35%;
+
+    /* Accent colors - Teal for communication */
+    --accent: 195 35% 45%; /* Soft teal */
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 195 35% 60%;
+    --accent-dark: 195 35% 35%;
+
+    /* Status colors (WCAG compliant) */
+    --success: 145 45% 42%; /* Darker green for contrast */
+    --success-foreground: 0 0% 100%;
+    --warning: 45 60% 45%; /* Darker amber */
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 60% 50%; /* Softer, darker red */
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: 110 10% 85%; /* More visible borders */
+    --input: 0 0% 100%; /* White background for inputs */
+    --ring: 310 40% 50%; /* Purple focus ring */
+
+    /* Border radius - Friendly and modern */
+    --radius: 1.2rem;
+
+    /* Gradients with warm colors */
+    --gradient-primary: linear-gradient(135deg, hsl(310 40% 50%), hsl(310 40% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(145 45% 42%), hsl(145 45% 52%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(110 10% 99%));
+    --gradient-accent: linear-gradient(135deg, hsl(195 35% 45%), hsl(145 20% 70%));
+
+    /* Soft layered shadows with purple tint */
+    --shadow-card: 0 2px 8px -2px hsl(310 40% 50% / 0.08), 0 1px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-elevated: 0 8px 24px -4px hsl(310 40% 50% / 0.10), 0 4px 12px -2px hsl(0 0% 0% / 0.08);
+    --shadow-glow: 0 0 0 2px hsl(310 40% 50% / 0.1), 0 0 20px hsl(310 40% 50% / 0.15);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Sidebar colors - Warm and inviting */
+    --sidebar-background: 110 10% 97%; /* Very light sage */
+    --sidebar-foreground: 30 5% 20%;
+    --sidebar-primary: 310 40% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 145 15% 92%;
+    --sidebar-accent-foreground: 30 5% 20%;
+    --sidebar-border: 110 10% 88%;
+    --sidebar-ring: 310 40% 50%;
+  }
+  
+  /* Dark mode - Warm and inviting */
+  .dark {
+    /* Base colors - Dark theme with warmth */
+    --background: 110 5% 12%; /* Warm dark, not pure black */
+    --foreground: 30 5% 93%; /* Warm white */
+
+    /* Card surfaces */
+    --card: 110 5% 15%;
+    --card-foreground: 30 5% 93%;
+
+    /* Popover surfaces */
+    --popover: 110 5% 15%;
+    --popover-foreground: 30 5% 93%;
+
+    /* Primary brand colors - Brighter lavender in dark */
+    --primary: 310 35% 60%; /* Lighter purple for dark mode */
+    --primary-foreground: 110 5% 12%;
+    --primary-light: 310 35% 70%;
+    --primary-dark: 310 35% 50%;
+
+    /* Secondary colors - Sage */
+    --secondary: 145 15% 30%; /* Dark sage */
+    --secondary-foreground: 30 5% 90%;
+
+    /* Muted colors */
+    --muted: 110 5% 25%;
+    --muted-foreground: 110 5% 70%;
+
+    /* Accent colors - Brighter teal */
+    --accent: 195 40% 55%; /* Brighter teal in dark */
+    --accent-foreground: 110 5% 12%;
+    --accent-light: 195 40% 65%;
+    --accent-dark: 195 40% 45%;
+
+    /* Status colors for dark mode */
+    --success: 145 40% 50%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 55% 55%;
+    --warning-foreground: 0 0% 100%;
+    --destructive: 0 55% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: 110 5% 30%;
+    --input: 110 5% 18%;
+    --ring: 310 35% 60%;
+
+    /* Gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(310 35% 60%), hsl(310 35% 70%));
+    --gradient-success: linear-gradient(135deg, hsl(145 40% 50%), hsl(145 40% 60%));
+    --gradient-card: linear-gradient(180deg, hsl(110 5% 15%), hsl(110 5% 13%));
+    --gradient-accent: linear-gradient(135deg, hsl(195 40% 55%), hsl(145 15% 40%));
+
+    /* Shadows for dark mode */
+    --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.2), 0 1px 4px -1px hsl(0 0% 0% / 0.15);
+    --shadow-elevated: 0 10px 24px -4px hsl(0 0% 0% / 0.3), 0 4px 12px -2px hsl(0 0% 0% / 0.2);
+    --shadow-glow: 0 0 0 2px hsl(310 35% 60% / 0.2), 0 0 30px hsl(310 35% 60% / 0.3);
+
+    /* Sidebar colors for dark mode */
+    --sidebar-background: 110 5% 10%; /* Very dark sage */
+    --sidebar-foreground: 30 5% 93%;
+    --sidebar-primary: 310 35% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 110 5% 18%;
+    --sidebar-accent-foreground: 30 5% 90%;
+    --sidebar-border: 110 5% 25%;
+    --sidebar-ring: 310 35% 60%;
+  }
+}
+
+/* Utility classes for Rezora platform */
+@layer components {
+  /* Typography System */
+  .text-display {
+    @apply text-4xl font-bold tracking-tight;
+  }
+  
+  .text-heading-1 {
+    @apply text-3xl font-bold;
+  }
+  
+  .text-heading-2 {
+    @apply text-2xl font-semibold;
+  }
+  
+  .text-heading-3 {
+    @apply text-xl font-semibold;
+  }
+  
+  .text-heading-4 {
+    @apply text-lg font-medium;
+  }
+  
+  .text-body-large {
+    @apply text-base;
+  }
+  
+  .text-body {
+    @apply text-sm;
+  }
+  
+  .text-body-small {
+    @apply text-xs;
+  }
+  
+  .text-caption {
+    @apply text-xs text-muted-foreground;
+  }
+  
+  /* Gradients */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  /* Shadows */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  /* Card Components */
+  .metric-card {
+    @apply bg-card border border-border rounded-lg p-6 shadow-card transition-all duration-200 hover:shadow-elevated hover:scale-[1.01];
+  }
+  
+  /* Button Components */
+  .primary-button {
+    @apply gradient-primary text-primary-foreground font-medium px-6 py-3 rounded-lg transition-smooth hover:shadow-glow;
+  }
+  
+  .secondary-button {
+    @apply bg-secondary text-secondary-foreground border border-border font-medium px-6 py-3 rounded-lg transition-smooth hover:bg-muted;
+  }
+  
+  /* Spacing System */
+  .space-section {
+    @apply space-y-6;
+  }
+  
+  .space-card {
+    @apply space-y-4;
+  }
+  
+  .space-form {
+    @apply space-y-4;
+  }
+  
+  .space-compact {
+    @apply space-y-2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  }
+  
+  /* Focus states for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+}
